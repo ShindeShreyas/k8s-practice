@@ -9,8 +9,8 @@ spec:
   - name: nginx-container
     images: nginx:latest
     ports:
-    - name: nginx-Port
-      containerPort: 80
+      - name: nginx-Port
+        containerPort: 80
 
 ---
 apiVersion: v1
@@ -19,6 +19,7 @@ metadata:
   name: cisvc
   labels:
     app: ci
+    env: dev
 spec:
   type: ClusterIP
   selector:
