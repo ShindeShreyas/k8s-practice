@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: mypod
   labels:
-    app: mypod
+    app: myapp
 spec:
   tolerations:
     - key: "prob"
