@@ -16,4 +16,4 @@ spec:
       ports:
         - containerPort: 80
   nodeSelector:
-    type: db
+    type: db # comment
