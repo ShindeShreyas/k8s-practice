@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment
+  name: my-deployment
   labels:
-    app: deploy
+    app: rs
 
 spec:
   replicas: 2
 
   selector:
     matchLabels:
-      app: deploy
+      app: rs
 
   strategy:
     type: RollingUpdate
@@ -21,21 +21,22 @@ spec:
   template:
     metadata:
       labels:
-        app: deploy
+        app: rs
 
     spec:
       containers:
-        - name: nginx-cont
+        - name: my-container
           image: nginx:latest
 
           ports:
-            - name: container-port
+            - name: nginx-port
               containerPort: 80
 
           resources:
             requests:
               cpu: "100m"
               memory: "64Mi"
+
             limits:
               cpu: "200m"
               memory: "128Mi"
@@ -44,17 +45,21 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: deploy-svc
+  name: my-service
   labels:
-    app: deploy
+    app: rs
 
 spec:
   type: NodePort
 
   selector:
-    app: deploy
+    app: rs
 
   ports:
     - port: 80
       targetPort: 80
       nodePort: 30001
+
+
+      
+  
