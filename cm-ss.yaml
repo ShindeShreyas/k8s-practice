@@ -18,7 +18,7 @@ spec:
         app: myapp
 
     spec:
-      containers:
+      container:
         - name: mysql-cont
           image: mysql:8.0
 
