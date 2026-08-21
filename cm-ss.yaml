@@ -32,4 +32,4 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: my-config
-                  key: mysql_root_password
+                  key: mysql_root_password # apply
