@@ -12,13 +12,15 @@ spec:
     matchLabels:
       app: myapp
 
+  serviceName: my-rs
+
   template:
     metadata:
       labels:
         app: myapp
 
     spec:
-      container:
+      containers:
         - name: mysql-cont
           image: mysql:8.0
 
